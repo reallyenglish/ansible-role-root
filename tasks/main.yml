@@ -3,8 +3,11 @@
 
 - include_vars: "{{ ansible_os_family }}.yml"
 
-- fail: msg="root_password must not be empty"
-  when: "{{ not root_password }}"
+- fail: msg="root_password must have a key {{ ansible_os_family }}"
+  when: " {{ not ansible_os_family in root_password }}"
+
+- fail: msg="root_password must have non-empty string in key {{ ansible_os_family }}"
+  when: " {{ not root_password[ansible_os_family] }}"
 
 - name: Create ssh directory
   file:
@@ -19,10 +22,7 @@
     mode: 600
   when: "{{ root_ssh_authorized_keys_array is defined and root_ssh_authorized_keys_array | length > 0 }}"
 
-- debug: msg="{{ root_password }}"
-
 - name: Set root password
   user:
     name: "{{ root_user }}"
-    password: "{{ root_password }}"
-  when: "{{ root_password is defined }}"
+    password: "{{ root_password[ansible_os_family] }}"
