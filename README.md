@@ -20,7 +20,7 @@ Role Variables
 
 ## root\_password
 
-`root_password` must has keys of `ansible_os_family`. Each key must have encrypted password.
+`root_password` must have keys of `ansible_os_family`. Each key must have encrypted password.
 
 ```yaml
 root_password:
