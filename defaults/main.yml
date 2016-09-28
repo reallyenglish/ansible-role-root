@@ -1,0 +1,5 @@
+root_user: root
+root_home: /root
+root_password:
+root_ssh_authorized_keys_path: null
+root_ssh_authorized_keys_array: []

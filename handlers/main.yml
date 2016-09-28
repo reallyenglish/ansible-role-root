@@ -1,0 +1,6 @@
+---
+
+- name: Restart root
+  service:
+    name: root
+    state: restarted

@@ -1,0 +1,6 @@
+---
+
+- name: Install root
+  pkgng:
+    name: root
+    state: present

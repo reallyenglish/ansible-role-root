@@ -1,0 +1,28 @@
+---
+# tasks file for ansible-role-root
+
+- include_vars: "{{ ansible_os_family }}.yml"
+
+- fail: msg="root_password must not be empty"
+  when: "{{ not root_password }}"
+
+- name: Create ssh directory
+  file:
+    path: "{{ root_home }}/.ssh"
+    state: directory
+    mode: 0700
+
+- name: Create authorized_keys (root_ssh_authorized_keys_array)
+  template:
+    src: authorized_keys.j2
+    dest: "{{ root_home }}/.ssh/authorized_keys"
+    mode: 600
+  when: "{{ root_ssh_authorized_keys_array is defined and root_ssh_authorized_keys_array | length > 0 }}"
+
+- debug: msg="{{ root_password }}"
+
+- name: Set root password
+  user:
+    name: "{{ root_user }}"
+    password: "{{ root_password }}"
+  when: "{{ root_password is defined }}"
