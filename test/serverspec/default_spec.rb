@@ -13,6 +13,12 @@ describe file('/root/.ssh') do
   it { should be_owned_by 'root' }
 end
 
+describe file('/root/.ssh/authorized_keys') do
+  it { should be_file }
+  it { should be_mode 600 }
+  it { should be_owned_by 'root' }
+end
+
 describe user('root') do
   it { should exist }
   it do
