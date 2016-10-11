@@ -1,15 +1,12 @@
-ansible-role-root
-=====================
+# ansible-role-root
 
-Configure Unix root account
+Configures password and authorized keys of Unix root account.
 
-Requirements
-------------
+## Requirements
 
 None
 
-Role Variables
---------------
+## Role Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -18,7 +15,7 @@ Role Variables
 | root\_password | dict of encrypted password of root | {} |
 | root\_ssh\_authorized\_keys\_array | list of authorized\_key | [] |
 
-## root\_password
+### root\_password
 
 `root_password` must have keys of `ansible_os_family`. Each key must have encrypted password.
 
@@ -30,6 +27,8 @@ root_password:
   RedHat: '$6$EU/YQpV1$9tZvYw9Ifw2bnZUnKQAXeisZVWR10OV4ERPlojDUiUqzMFngi9SeSTX7NWoq.eXS1t/tUlqx6DvqyEdTU7Wpn1' # password
 
 ```
+
+Created by [yaml2readme.rb](https://gist.github.com/trombik/b2df709657c08d845b1d3b3916e592d3)
 
 Dependencies
 ------------
