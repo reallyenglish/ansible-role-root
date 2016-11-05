@@ -20,6 +20,7 @@
     src: authorized_keys.j2
     dest: "{{ root_home }}/.ssh/authorized_keys"
     mode: 0600
+    validate: ssh-keygen -lf %s
   when: "{{ root_ssh_authorized_keys_array is defined and root_ssh_authorized_keys_array | length > 0 }}"
 
 - name: Set root password
