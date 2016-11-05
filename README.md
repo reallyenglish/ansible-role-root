@@ -2,11 +2,11 @@
 
 Configures password and authorized keys of Unix root account.
 
-## Requirements
+# Requirements
 
 None
 
-## Role Variables
+# Role Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -15,7 +15,7 @@ None
 | root\_password | dict of encrypted password of root | {} |
 | root\_ssh\_authorized\_keys\_array | list of authorized\_key | [] |
 
-### root\_password
+## root\_password
 
 `root_password` must have keys of `ansible_os_family`. Each key must have encrypted password.
 
@@ -30,13 +30,11 @@ root_password:
 
 Created by [yaml2readme.rb](https://gist.github.com/trombik/b2df709657c08d845b1d3b3916e592d3)
 
-Dependencies
-------------
+# Dependencies
 
 None
 
-Example Playbook
-----------------
+# Example Playbook
 
 ```yaml
 - hosts: localhost
@@ -52,8 +50,7 @@ Example Playbook
       - "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key"
 ```
 
-License
--------
+# License
 
 Copyright (c) 2016 Tomoyuki Sakurai <tomoyukis@reallyenglish.com>
 
@@ -69,8 +66,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-Author Information
-------------------
+# Author Information
 
 Tomoyuki Sakurai <tomoyukis@reallyenglish.com>
 
